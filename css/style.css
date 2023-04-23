@@ -11,11 +11,17 @@
 
 /*Variables globales*/
 :root{
-    --sideBGColor: #040b14;
-    --themeColor: #00A78E;
-    --iconBGColor: #2C2F3F;
-    --textColor: #525252;
-    --bgColor: #F7F7F7;
+    /* --sideBGColor: #040b14; */
+    /* --iconBGColor: green; */
+    /* --textColor: #525252; */
+    --sideBGColor: #1a73e8;
+    --themeColor: yellow;
+    --iconBGColor: #F1F3F4;
+    --hoverColor: green;
+    --activeColor: #f00;
+    --textColor: #FFFFFF;
+    --linksColor: #3c4043;
+    --bgColor: #FFFFFF;
 }
 
 /*Header start*/
@@ -54,13 +60,14 @@ header .profile .social-icons a{
     text-align: center;
     line-height: 37px;
     background-color: var(--iconBGColor);
-    color: white;
+    color: var(--linksColor);
     font-size: 18px;
     margin: 1.5px;
     transition: 0.4s;
 }
 header .profile .social-icons a:hover{
-    background-color: var(--themeColor);
+    background-color: var(--hoverColor);
+    color: var(--textColor);
 }
 
 
@@ -77,7 +84,7 @@ header nav ul li a{
     text-decoration: none;
     padding: 7px 10px;
     margin: 7px 0;
-    color: lightgray;
+    color: var(--textColor);
     font-weight: 400;
     font-size: 15px;
     letter-spacing: 0.6px;
@@ -88,10 +95,10 @@ header nav ul li a i{
     transition: 0.4s;
 }
 header nav ul li a:hover{
-    color: var(--themeColor);
+    color: var(--activeColor);
 }
 header nav ul li .active i{
-    color: var(--themeColor);
+    color: var(--activeColor);
 }
 
 /*Navbar final*/
@@ -101,7 +108,7 @@ header .footer{
     text-align: center;
     background-color: var(--sideBGColor);
     width: 300px;
-    color: lightgray;
+    color: var(--textColor);
     font-size: 14px;
     letter-spacing: 0.6px;
     padding: 15px;
@@ -152,3 +159,84 @@ header .footer p a{
 }
 
 /*Header end*/
+
+/*--------------------------------------------*/
+
+/*------Main Section------*/
+main{
+    margin-left: 300px;
+    background-color: var(--bgColor);
+    transition: 0.3s;
+}
+@media only screen and (max-width: 1050px){
+    main{
+        margin-left:0;
+    }
+}
+/*----------------Home section-------------------*/
+#home{
+    height: 100vh;
+    width: 100%;
+    /*background-image: url(img.);*/
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    position: relative;
+}
+
+/*Overlay*/
+#home::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.431); */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#home .home-row{
+    z-index: 1;
+}
+#home .home-row h1{
+    font-size: 60px;
+    color: var(--linksColor);
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    line-height: 70px;
+}
+#home .home-row h1 span{
+    color: var(--themeColor);
+    font-size: 30px;
+    font-weight: 500;
+}
+#home .home-row p{
+    color: var(--linksColor);
+    font-size: 30px;
+    font-weight: 500;
+}
+#home .home-row p span{
+    border-bottom: 4px solid var(--themeColor);
+}
+
+/*Mobile View*/
+@media only screen and (max-width: 1050px){
+    #home{
+        padding: 30px;
+    }
+    #home .home-row h1{
+        font-size: 60px;
+        letter-spacing: -1px;
+        line-height: 50px;
+    }
+    #home .home-row h1 br{
+        display: none;
+    }
+    #home .home-row p{
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
